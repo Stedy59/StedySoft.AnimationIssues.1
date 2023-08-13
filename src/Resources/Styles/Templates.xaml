@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary
+	x:Class="StedySoft.AnimationIssues.Templates"
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:colors="clr-namespace:StedySoft.Maui.Framework;assembly=StedySoft.AnimationIssues"
+	xmlns:fonts="clr-namespace:StedySoft.Maui.Framework;assembly=StedySoft.AnimationIssues"
+	xmlns:shadows="clr-namespace:StedySoft.Maui.Framework;assembly=StedySoft.AnimationIssues">
+
+	<!--#region Templates-->
+
+	<ControlTemplate
+		x:Key="DualLabelItemTemplate">
+		<Grid
+			x:Name="itemGrid"
+			RowDefinitions="*,auto">
+			<Label
+				x:Name="glyph"
+				Grid.Row="0"
+				HorizontalOptions="Fill"
+				VerticalOptions="Fill"
+				HorizontalTextAlignment="Center"
+				VerticalTextAlignment="Center"
+				FontFamily="{TemplateBinding GlyphFontFamily}"
+				FontSize="{TemplateBinding GlyphFontSize}"
+				LineBreakMode="NoWrap"
+				Opacity="{TemplateBinding GlyphOpacity}"
+				TextColor="{TemplateBinding GlyphColor}"
+				Text="{TemplateBinding Glyph}"/>
+			<Label
+				x:Name="text"
+				Grid.Row="1"
+				Padding="10,0,10,4"
+				HorizontalOptions="Fill"
+				VerticalOptions="Fill"
+				HorizontalTextAlignment="Center"
+				VerticalTextAlignment="Center"
+				FontFamily="{TemplateBinding FontFamily}"
+				FontSize="{TemplateBinding FontSize}"
+				LineBreakMode="TailTruncation"
+				TextColor="{TemplateBinding TextColor}"
+				Text="{TemplateBinding Text}"/>
+		</Grid>
+	</ControlTemplate>
+
+	<!--#endregion-->
+
+</ResourceDictionary>

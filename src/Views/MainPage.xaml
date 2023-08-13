@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+	x:Class="StedySoft.AnimationIssues.Views.MainPage"
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:colors="clr-namespace:StedySoft.Maui.Framework"
+	xmlns:components="clr-namespace:StedySoft.AnimationIssues.Components;assembly=StedySoft.AnimationIssues"
+	xmlns:fonts="clr-namespace:StedySoft.Maui.Framework;assembly=StedySoft.AnimationIssues"
+	xmlns:models="clr-namespace:StedySoft.AnimationIssues"
+	xmlns:settings="clr-namespace:StedySoft.Maui.Framework"
+	x:Name="_parent"
+	Title="StedySoft AnimationIssues">
+
+	<ContentPage.Content>
+
+		<ScrollView>
+
+			<VerticalStackLayout>
+
+				<Border
+					Style="{DynamicResource FrameStyle}"
+					Margin="10,10,10,5">
+					<VerticalStackLayout
+						Style="{DynamicResource InnerStackLayout}">
+						<HorizontalStackLayout>
+							<components:DualLabelItem
+								x:Name="Label100"
+								Glyph="{fonts:MaterialIcon Warning}"
+								GlyphOpacity="1"
+								Text="100% Opacity"/>
+							<Label
+								Margin="20,0,5,0"
+								Text="Current Opacity: "/>
+							<Label
+								BindingContext="{x:Reference Name=Label100}"
+								FontAttributes="Bold"
+								Text="{Binding Path=GlyphElement.Opacity}"/>
+						</HorizontalStackLayout>
+						<HorizontalStackLayout>
+							<components:DualLabelItem
+								x:Name="Label75"
+								Glyph="{fonts:MaterialIcon Warning}"
+								GlyphOpacity=".75"
+								Text="75% Opacity"/>
+							<Label
+								Margin="20,0,5,0"
+								Text="Current Opacity: "/>
+							<Label
+								BindingContext="{x:Reference Name=Label75}"
+								FontAttributes="Bold"
+								Text="{Binding Path=GlyphElement.Opacity}"/>
+						</HorizontalStackLayout>
+						<HorizontalStackLayout>
+							<components:DualLabelItem
+								x:Name="Label50"
+								Glyph="{fonts:MaterialIcon Warning}"
+								GlyphOpacity=".5"
+								Text="50% Opacity"/>
+							<Label
+								Margin="20,0,5,0"
+								Text="Current Opacity: "/>
+							<Label
+								BindingContext="{x:Reference Name=Label50}"
+								FontAttributes="Bold"
+								Text="{Binding Path=GlyphElement.Opacity}"/>
+						</HorizontalStackLayout>
+						<HorizontalStackLayout>
+							<components:DualLabelItem
+								x:Name="Label25"
+								Glyph="{fonts:MaterialIcon Warning}"
+								GlyphOpacity=".25"
+								Text="25% Opacity"/>
+							<Label
+								Margin="20,0,5,0"
+								Text="Current Opacity: "/>
+							<Label
+								BindingContext="{x:Reference Name=Label25}"
+								FontAttributes="Bold"
+								Text="{Binding Path=GlyphElement.Opacity}"/>
+						</HorizontalStackLayout>
+						<HorizontalStackLayout>
+							<components:DualLabelItem
+								x:Name="Label0"
+								Glyph="{fonts:MaterialIcon Warning}"
+								GlyphOpacity="0"
+								Text="0% Opacity"/>
+							<Label
+								Margin="20,0,5,0"
+								Text="Current Opacity: "/>
+							<Label
+								BindingContext="{x:Reference Name=Label0}"
+								FontAttributes="Bold"
+								Text="{Binding Path=GlyphElement.Opacity}"/>
+						</HorizontalStackLayout>
+					</VerticalStackLayout>
+				</Border>
+
+				<Border
+					Style="{DynamicResource FrameStyle}"
+					Margin="10,5,10,10">
+					<VerticalStackLayout
+						Spacing="10"
+						Style="{DynamicResource InnerStackLayout}">
+						<Button Text="Set Opacity to 0" Clicked="OnSetOpacityTo0ButtonClicked"/>
+						<Button Text="Set Opacity to 100" Clicked="OnSetOpacityTo100ButtonClicked"/>
+					</VerticalStackLayout>
+				</Border>
+
+			</VerticalStackLayout>
+
+		</ScrollView>
+
+	</ContentPage.Content>
+</ContentPage>
